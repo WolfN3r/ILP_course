@@ -56,9 +56,15 @@ per-session time budgets (~18-26 hours total).
 
 ## Setup
 
+`gurobipy` 13.0.2 has no wheel for Python 3.9 — on macOS, plain `python3` often resolves to
+the old system Python 3.9 (from Command Line Tools), which makes `pip install` fail with a
+"no matching distribution" error that looks like a network problem but isn't. Use a Python
+3.10+ interpreter explicitly (e.g. a Homebrew install) when creating the venv:
+
 ```bash
-python3 -m venv .venv
-source .venv/bin/activate      # Windows: .venv\Scripts\activate
+python3.13 -m venv .venv        # use whichever 3.10+ interpreter you have; check with
+                                 # `ls /opt/homebrew/bin/python3.1*` or `which -a python3.13`
+source .venv/bin/activate       # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 python code/s0_orientation/check_environment.py
 ```
