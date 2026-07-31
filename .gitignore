@@ -1,0 +1,19 @@
+# Python
+.venv/
+__pycache__/
+*.pyc
+
+# Generated graphs (regenerate with lesson_time_graph.py)
+.claude/workProgress/*.png
+
+# Gurobi
+*.lp
+*.ilp
+gurobi.log
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Local Claude Code permission overrides (personal, not shared course config)
+.claude/settings.local.json
